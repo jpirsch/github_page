@@ -1,8 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Toolbar from './Toolbar';
 
 function App() {
+  const tabs = [
+    { title: "ichi" },
+    { title: "ni" },
+    { title: "san" },
+  ];
+  const contents = [
+    { inner: <div className="truc">
+                    </div>},
+    { inner: <h3>Title</h3> },
+    { inner: <h3>Title</h3> }
+  ];
   return (
     <div className="App">
       <header className="App-header">
@@ -19,6 +31,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Toolbar tabs={tabs} contents={contents} />
     </div>
   );
 }
