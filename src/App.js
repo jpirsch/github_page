@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Toolbar from './Toolbar';
+import Header from "./Components/Header.js"
+import Content from "./Components/Content.js"
 
 function App() {
   const tabs = [
@@ -17,6 +19,14 @@ function App() {
   ];
   return (
     <div className="App">
+	<Header/>
+	<Content/>
+    </div>
+  );
+}
+
+export default App;
+/*
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -32,8 +42,4 @@ function App() {
         </a>
       </header>
       <Toolbar tabs={tabs} contents={contents} />
-    </div>
-  );
-}
-
-export default App;
+*/
