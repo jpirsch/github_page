@@ -1,5 +1,6 @@
+
 import React from "react";
-import Skills from "./Skills.js"
+import CV from "./CV.js"
 
 class Styles extends React.Component {
 
@@ -7,7 +8,15 @@ class Styles extends React.Component {
     return (
       <main className="row s-styles">
         <section id="styles" className="column large-full">
-            <Skills/>
+
+          <div className="row">
+            <div className="column large-full">
+              <h3>A test</h3>
+              <p> Ask for more</p>
+            </div>
+          </div>
+          <CV/>
+
         </section>
       </main>
     );

@@ -1,7 +1,6 @@
 import React from "react";
+import SiteLogo from "../logo.svg";
 
-//var NewComponent = React.createClass({
-//  render: function() {
 
 class HeaderTop extends React.Component {
 
@@ -10,7 +9,7 @@ class HeaderTop extends React.Component {
       <div className="header__top">
         <div className="header__logo">
           <a className="site-logo" href="index.html">
-            <img src="images/logo.svg" alt="Homepage" />
+            <img src={SiteLogo} alt="Homepage" />
           </a>
         </div>
         <div className="header__search">
@@ -30,6 +29,5 @@ class HeaderTop extends React.Component {
     );
   }
 }
-//);
 
 export default HeaderTop;
