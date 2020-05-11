@@ -3,7 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import Toolbar from './Toolbar';
 import Header from "./Components/Header.js"
-import Content from "./Components/Content.js"
+import Styles from "./Components/Styles.js"
+import Home from "./Components/Home.js"
+//import ThreeTest from "./Components/ThreeTest.js"
+import { HashRouter, Route, Link } from "react-router-dom";
 
 function App() {
   const tabs = [
@@ -19,11 +22,20 @@ function App() {
   ];
   return (
     <div className="App">
+      <HashRouter basename="/">
 	<Header/>
-	<Content/>
+        <div>
+          <Route exact path="/Styles" component={Styles} />
+          <Route path="/Home" component={Home} />
+        </div>
+      </HashRouter>
     </div>
   );
 }
+//          <Route path="/Three" component={ThreeTest} />
+
+//const Home = () => <div><h2>Home</h2></div>
+const About = () => <div><h2>About</h2></div>
 
 export default App;
 /*

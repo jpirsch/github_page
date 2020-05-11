@@ -1,15 +1,19 @@
+
 import React from "react";
+import {Link } from "react-router-dom";
 
-//var HeaderNav = React.createClass({
-
-//  render: function() {
 class HeaderNav extends React.Component {
 
   render() {
     return (
       <nav className="header__nav-wrap">
         <ul className="header__nav">
-          <li className="current"><a href="index.html" title="">Home</a></li>
+          <li className="current">
+            <a href="index.html" title="">
+              <Link to="/Home">Home</Link>
+            </a>
+          </li>
+            
           <li className="has-children">
             <a href="#0" title="">Categories</a>
             <ul className="sub-menu">
@@ -30,10 +34,19 @@ class HeaderNav extends React.Component {
               <li><a href="single-standard.html">Standard Post</a></li>
             </ul>
           </li>
-          <li><a href="styles.html" title="">Styles</a></li>
-          <li><a href="page-about.html" title="">About</a></li>
+          <li>
+            <a href="" title="">
+              <Link to="/Styles">Styles</Link>
+            </a>
+          </li>
+          <li>
+            <a href="page-about.html" title="">
+              <Link to="/Tbree">Three</Link>
+            </a>
+          </li>
           <li><a href="page-contact.html" title="">Contact</a></li>
         </ul> {/* end header__nav */}
+
         <ul className="header__social">
           <li className="ss-facebook">
             <a href="https://facebook.com/">
