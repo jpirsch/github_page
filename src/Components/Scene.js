@@ -5,15 +5,23 @@ import Lights from './Lights';
 import Terrain from "./Terrain";
 import img from "../Images/img1.jpg"
 
-const Scene = () => (
+const test = (t) => (
+  console.log("test rot :"+t)
+)
+
+const Scene = (props) => (
   <>
     <Lights />
         <Suspense fallback={
           <Dom center className="loading" children="loading..." />} > 
-    <Terrain url={img}/>
+    {props.tabs.map((t, i) =>
+          <Terrain position={t.position} rotation={t.rotation} test={test(t.rotation)} url={img} />
+        )}
           </Suspense>
   </>
 );
+/*
+<Terrain position={t.position} test={test(t.position)} url={img} />*/
 
 export default Scene;
 

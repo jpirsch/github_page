@@ -1,12 +1,12 @@
 
 import React, {useRef} from "react";
 import { useLoader, useFrame, useUpdate } from "react-three-fiber";
-import {TextureLoader} from "three"
+import * as THREE from "three"
 //import { noise } from "./perlin";
 import Shader from "./Shader.js";
 //import 
 
-const Terrain = (url, ...props) => {
+const Terrain = (props) => {
 //function Terrain(url, ...props) {
   const group = useRef();
 //  const [texture] = useLoader(TextureLoader, ["../Images/img1.jpg"]);
@@ -25,6 +25,12 @@ const Terrain = (url, ...props) => {
       }
       pos.needsUpdate = true;
     });*/
+    //for (const property in props) {
+    //  console.log(`${property}: ${props[property]}`);
+    //}
+    //console.log("position : "+props.position)
+    console.log("rotation : "+props.rotation);//[-Math.PI / 2, 0, 0]
+    console.log("culling : "+THREE.BackSide);
     // Raf loop
     useFrame(() => {
  //     mesh.current.rotation.z += 0.001;
@@ -32,9 +38,9 @@ const Terrain = (url, ...props) => {
 
   return (
     <group ref={group}>
-    <mesh rotation={[-Math.PI / 2, 0, 0]}>
+    <mesh position={props.position} rotation={props.rotation}>
       <planeBufferGeometry attach="geometry" args={[25, 25, 75, 75]} />
-      <shader attach="material" val={1} />
+      <shader attach="material" side={THREE.DoubleSide} val={1} />
     </mesh>
     </group>
   );
