@@ -9,22 +9,10 @@ class HeaderNav extends React.Component {
     return (
       <nav className="header__nav-wrap">
         <ul className="header__nav">
-          <li className="current">
-            <a href="index.html" title="">
-              <Link to="/Home">Home</Link>
-            </a>
-          </li>
+          <li className="current"><Link to="/Home">Home</Link></li>
           <SubMenu/> 
-          <li>
-            <a href="" title="">
-              <Link to="/Styles">Styles</Link>
-            </a>
-          </li>
-          <li>
-            <a href="page-about.html" title="">
-              <Link to="/Three">Three</Link>
-            </a>
-          </li>
+          <li><Link to="/Styles">Styles</Link></li>
+          <li><Link to="/Three">Three</Link></li>
           <li><a href="page-contact.html" title="">Contact</a></li>
         </ul> {/* end header__nav */}
 

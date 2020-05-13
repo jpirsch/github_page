@@ -8,7 +8,7 @@ class Toolbar extends React.Component {
   constructor() {
     super();
 
-    this.state = { active: 0} 
+    this.state = { active: 0}
   }
 
 
