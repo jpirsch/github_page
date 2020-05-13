@@ -1,5 +1,6 @@
 
 import React from "react";
+import SubMenu from "./HeaderNavSub.js";
 import {Link } from "react-router-dom";
 
 class HeaderNav extends React.Component {
@@ -13,27 +14,7 @@ class HeaderNav extends React.Component {
               <Link to="/Home">Home</Link>
             </a>
           </li>
-            
-          <li className="has-children">
-            <a href="#0" title="">Categories</a>
-            <ul className="sub-menu">
-              <li><a href="category.html">Lifestyle</a></li>
-              <li><a href="category.html">Health</a></li>
-              <li><a href="category.html">Family</a></li>
-              <li><a href="category.html">Management</a></li>
-              <li><a href="category.html">Travel</a></li>
-              <li><a href="category.html">Work</a></li>
-            </ul>
-          </li>
-          <li className="has-children">
-            <a href="#0" title="">Blog Posts</a>
-            <ul className="sub-menu">
-              <li><a href="single-video.html">Video Post</a></li>
-              <li><a href="single-audio.html">Audio Post</a></li>
-              <li><a href="single-gallery.html">Gallery Post</a></li>
-              <li><a href="single-standard.html">Standard Post</a></li>
-            </ul>
-          </li>
+          <SubMenu/> 
           <li>
             <a href="" title="">
               <Link to="/Styles">Styles</Link>
@@ -41,7 +22,7 @@ class HeaderNav extends React.Component {
           </li>
           <li>
             <a href="page-about.html" title="">
-              <Link to="/Tbree">Three</Link>
+              <Link to="/Three">Three</Link>
             </a>
           </li>
           <li><a href="page-contact.html" title="">Contact</a></li>

@@ -1,0 +1,25 @@
+
+.backshadow
+{
+  box-shadow: 10px 8px 8px #888888;
+}
+
+.backshadow-blue
+{
+  box-shadow: 10px 10px 8px #6599FF;
+}
+
+.backshadow-orange
+{
+  box-shadow: 4px -4px 2px #FF9900;
+}
+
+.backshadow-green
+{
+  box-shadow: 10px 10px 8px #097054;
+}
+
+.backshadow-yellow
+{
+  box-shadow: 10px 10px 8px #FFDE00;
+}

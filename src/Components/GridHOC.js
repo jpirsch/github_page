@@ -11,7 +11,6 @@ const Row = (WrappedComponent) => {
       );
     }
   }
-
   return HOC;
 };
 
@@ -28,7 +27,6 @@ export const RowHalf = (Comp1, Comp2) => {
       );
     }
   }
-
   return HOC;
 };
 
@@ -42,7 +40,6 @@ export const Column6 = (WrappedComponent) => {
       );
     }
   }
-
   return HOC;
 };
 
@@ -56,7 +53,6 @@ export const ColumnFull = (WrappedComponent) => {
       );
     }
   }
-
   return HOC;
 };
 
@@ -71,7 +67,20 @@ export const Merge = (Comp1, Comp2) => {
       );
     }
   }
+  return HOC;
+};
 
+export const Page = (Comp1, Comp2) => {
+  class HOC extends React.Component {
+    render() {
+      return (
+        <div>
+          <Comp1 />
+          <Comp2 />
+        </div>
+      );
+    }
+  }
   return HOC;
 };
 
