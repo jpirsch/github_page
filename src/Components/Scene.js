@@ -5,15 +5,25 @@ import Lights from './Lights';
 import Terrain from "./Terrain";
 import img from "../Images/img1.jpg"
 
-const Scene = () => (
+function test(props) {
+  console.log("test pprops : "+props[0]);
+  for (const [key, value] in props[0]) {
+    console.log( "props key : " + key + ", value : " + value );
+  }
+}
+
+const Scene = (props) => (
   <>
-    <Lights />
+    <Lights data={test( props.data )} />
         <Suspense fallback={
           <Dom center className="loading" children="loading..." />} > 
-    <Terrain url={img}/>
+        {props.data.map((t, i) =>
+          <Terrain truc={t} />
+        )}
           </Suspense>
   </>
 );
+//    <Terrain url={img}/>
 
 export default Scene;
 

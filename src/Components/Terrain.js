@@ -6,7 +6,7 @@ import {TextureLoader} from "three"
 import Shader from "./Shader.js";
 //import 
 
-const Terrain = (url, ...props) => {
+const Terrain = (props) => {
 //function Terrain(url, ...props) {
   const group = useRef();
 //  const [texture] = useLoader(TextureLoader, ["../Images/img1.jpg"]);
@@ -32,7 +32,7 @@ const Terrain = (url, ...props) => {
 
   return (
     <group ref={group}>
-    <mesh rotation={[-Math.PI / 2, 0, 0]}>
+    <mesh position={[0,0,0]}rotation={[-Math.PI / 2, 0, 0]}>
       <planeBufferGeometry attach="geometry" args={[25, 25, 75, 75]} />
       <shader attach="material" val={1} />
     </mesh>

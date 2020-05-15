@@ -1,37 +1,38 @@
+
 import React from "react";
 
+function SkillBar( props ) {
+  /*for (const prop in props) {
+    console.log(`props.${prop} = ${props[prop]}`);
+  }*/
+  return (
+    <>
+    <li>
+      <div className={"progress percent"+props.percent}><span>{props.percent+"%"}</span></div>
+      <strong>{props.name}</strong>
+    </li>
+    </>
+  );
+}
 
 class Skills extends React.Component {
 
   render() {
+    const skillList = [
+      { name: "C++", percent: "80" },
+      { name: "C", percent: "80" },
+      { name: "Lua", percent: "80" },
+      { name: "Javascript", percent: "80" },
+      { name: "Python", percent: "80" }
+    ];
+//    return (<h1> HOHO </h1>);
     return (
       <div>
         <h3>Skill Bars</h3>
         <ul className="skill-bars">
-          <li>
-            <div className="progress percent90"><span>90%</span></div>
-            <strong>HTML5</strong>
-          </li>
-          <li>
-            <div className="progress percent85"><span>85%</span></div>
-            <strong>CSS3</strong>
-          </li>
-          <li>
-            <div className="progress percent70"><span>70%</span></div>
-            <strong>JQuery</strong>
-          </li>
-          <li>
-            <div className="progress percent95"><span>95%</span></div>
-            <strong>PHP</strong>
-          </li>
-          <li>
-            <div className="progress percent75"><span>75%</span></div>
-            <strong>Wordpress</strong>
-          </li>
-          <li>
-            <div className="progress percent90"><span>90%</span></div>
-            <strong>Angular JS</strong>
-          </li>
+          {skillList.map((t, i) =>
+            <SkillBar name={t.name} percent={t.percent} />
+          )}
         </ul>
       </div>
     );
