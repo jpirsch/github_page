@@ -1,8 +1,7 @@
 
 import React from "react";
 import Row, {Column6, RowHalf} from "./GridHOC.js"
-import "./Graphics.css"
-//import ThreeBase from "./ThreeBase.js"
+import "./ShaderGallery.css"
 import ThreeC from "./Three/ThreeCanvas.js"
 
 //class Page_item extends React.Component {
@@ -17,7 +16,7 @@ function Item() {
 //  }
 }
 
-class Graphics extends React.Component {
+class ShaderGallery extends React.Component {
 
   render() {
     const InCol = Column6(Item);
@@ -25,7 +24,7 @@ class Graphics extends React.Component {
     return (
       <div className="s-content content">
         <main className="row s-styles">
-          <section id="styles" className="column large-full">
+          <section id="Graphics" className="column large-full">
 
             <div className="backshadow">
               <ThreeC/>
@@ -40,4 +39,4 @@ class Graphics extends React.Component {
     //const Col = ColumnFull(ThreeCanvas); 
     //const Row1 = Row(Col);
 
-export default Graphics;
+export default ShaderGallery;

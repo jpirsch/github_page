@@ -1,12 +1,13 @@
 import React from 'react';
 //import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 //import Toolbar from './Toolbar';
 import Header from "./Components/Header.js"
-import Styles from "./Components/Styles.js"
 import Home from "./Components/Home.js"
-import Graphics from "./Components/Graphics.js"
-import ThreeTest from "./Components/ThreeTest.js"
+import Categories,
+{ Graphics, Physics, AI, UI } from "./Components/Categories.js"
+import ShaderGallery from "./Components/ShaderGallery.js"
+import About from "./Components/About.js"
 import { HashRouter, Route } from "react-router-dom";
 
 function App() {
@@ -15,14 +16,18 @@ function App() {
       <HashRouter basename="/">
 	<Header/>
         <div>
-          <Route exact path="/Styles" component={Styles} />
           <Route path="/Home" component={Home} />
           <Route path="/Graphics" component={Graphics} />
-          <Route path="/Three" component={ThreeTest} />
+          <Route path="/Physics" component={Physics} />
+          <Route path="/AI" component={AI} />
+          <Route path="/UI" component={UI} />
+          <Route path="/ShaderGallery" component={ShaderGallery} />
+          <Route path="/About" component={About} />
         </div>
       </HashRouter>
     </div>
   );
 }
+//          <Route exact path="/CV" component={Styles} />
 
 export default App;

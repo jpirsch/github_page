@@ -1,7 +1,7 @@
 
 import React from "react";
-import HeaderNav from "./HeaderNav";
-import HeaderTop from "./HeaderTop";
+import HeaderNav from "./Header/HeaderNav";
+import HeaderTop from "./Header/HeaderTop";
 
 //var Header = React.createClass({
 class Header extends React.Component {

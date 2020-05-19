@@ -2584,6 +2584,21 @@ input::-moz-focus-inner {
   background-image: url(../images/icons/social/icon-rss.svg);
 }
 
+.header__social .ss-linkedin a::after {
+  background-image: url(../images/icons/social/in.svg);
+}
+
+.header__social .ss-github a::after {
+  background-image: url(../images/icons/social/github-white.svg);
+  height: 2.1rem;
+  width: 2.1rem;
+}
+
+.header__social .ss-gitlab a::after {
+  background-image: url(../images/icons/social/gitlab-white.svg);
+  height: 2.8rem;
+  width: 2.8rem;
+}
 /* -------------------------------------------------------------------
  * ## header search trigger
  * ------------------------------------------------------------------- */
