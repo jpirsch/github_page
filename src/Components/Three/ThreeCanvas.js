@@ -20,7 +20,7 @@ class ThreeC extends React.Component {
     var quat = new Quaternion();
     let tabs = Array();
     for( let i = 0 ; i < 8 ; i++ ) {
-      //console.log( "angle "+i+" : "+pi4*i);
+      console.log( "angle "+i+" : "+pi4*i);
       quat.setFromAxisAngle( y_axis, pi4*i );
       let pos = new Vector3(1.25,0,0).applyQuaternion(quat);
       let dir = new Vector3(0,0,1).applyQuaternion(quat);

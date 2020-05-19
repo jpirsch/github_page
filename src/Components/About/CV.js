@@ -2,7 +2,7 @@
 import React from "react";
 import Skills from "./Skills.js"
 import Timeline from "./Timeline.js"
-import {Column6, RowHalf} from "./GridHOC.js"
+import {Column6, RowHalf} from "../GridHOC.js"
 
 //class Page_item extends React.Component {
 //  render() {

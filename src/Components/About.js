@@ -1,8 +1,8 @@
 
 import React from "react";
-import CV from "./CV.js"
+import CV from "./About/CV.js"
 
-class Styles extends React.Component {
+class About extends React.Component {
 
   render() {
     return (
@@ -26,4 +26,4 @@ class Styles extends React.Component {
   }
 }
 
-export default Styles;
+export default About;

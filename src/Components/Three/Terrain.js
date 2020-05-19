@@ -6,8 +6,7 @@ import {DoubleSide, TextureLoader} from "three";
 import MyShader from "./Shader.js";
 
 const Terrain = (props) => {
-//function Terrain(url, ...props) {
-  const group = useRef();
+//  const group = useRef();
   const texture1 = useLoader(TextureLoader, [props.url]);
   //const texture = UseMemo(() => new TextureLoader().load(props.url), [props.url]);
     const mesh = useUpdate(({ geometry }) => {
