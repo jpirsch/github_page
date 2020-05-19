@@ -34,8 +34,6 @@ const Scene = (props) => (
           </Suspense>
   </>
 );
-/*
-<Terrain position={t.position} test={test(t.position)} url={img} />*/
 
 export default Scene;
 

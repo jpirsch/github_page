@@ -19,12 +19,14 @@ class ThreeC extends React.Component {
     var y_axis = new Vector3( 0., 1., 0. );
     var quat = new Quaternion();
     let tabs = Array();
+    let frags = [ Voronoi, Voronoi, Voronoi, Voronoi, Voronoi,
+                  Voronoi, Voronoi, Voronoi ];
     for( let i = 0 ; i < 8 ; i++ ) {
       //console.log( "angle "+i+" : "+pi4*i);
       quat.setFromAxisAngle( y_axis, pi4*i );
       let pos = new Vector3(1.25,0,0).applyQuaternion(quat);
       let dir = new Vector3(0,0,1).applyQuaternion(quat);
-      tabs.push( { position: pos, rotation:[0,dir.z,0], frag: Voronoi } );
+      tabs.push( { position: pos, rotation:[0,dir.z,0], frag: frags[i] } );
     }
       /*const tabs = [
       { position: [     1,  0,     0 ], rotation: [ 0,   pi2, 0 ], frag: Voronoi },
