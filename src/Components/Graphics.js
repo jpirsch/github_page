@@ -3,7 +3,7 @@ import React from "react";
 import Row, {Column6, RowHalf} from "./GridHOC.js"
 import "./Graphics.css"
 //import ThreeBase from "./ThreeBase.js"
-import ThreeC from "./ThreeCanvas.js"
+import ThreeC from "./Three/ThreeCanvas.js"
 
 //class Page_item extends React.Component {
 //  render() {
@@ -27,8 +27,8 @@ class Graphics extends React.Component {
         <main className="row s-styles">
           <section id="styles" className="column large-full">
 
-              <ThreeC/>
             <div className="backshadow">
+              <ThreeC/>
             </div>
 
           </section>

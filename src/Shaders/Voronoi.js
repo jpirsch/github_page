@@ -1,39 +1,13 @@
 
-import * as THREE from 'three'
-import { extend } from 'react-three-fiber'
+const Voronoi = `
 
-export default class Shader extends THREE.ShaderMaterial {
-  constructor() {
-    super({
-      uniforms: {
-        effectFactor: { type: 'f', value: 1.2 },
-        dispFactor: { type: 'f', value: 0 },
-        texture: { type: 't', value: undefined },
-        texture2: { type: 't', value: undefined },
-        disp: { type: 't', value: undefined }
-      },
-      vertexShader: `
-        varying vec2 vUv;
-        void main() {
-          vUv = uv;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-        }`,
-      fragmentShader: `
-        varying vec2 vUv;
-        uniform sampler2D texture;
-        uniform sampler2D texture2;
-        uniform sampler2D disp;
-        uniform float _rot;
-        uniform float dispFactor;
-        uniform float effectFactor;
+varying vec2 vUv;
+uniform sampler2D texture;
 
-/* By Palliaci
- * License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
- */
 #define I_MAX	20 // Should be at least 50 but my computer is old...
 #define FAR		5.
 #define E		.02 // Could also be switched to 0.002
-#define SCALE	4.
+#define SCALE	6.
 #define LIGHTS
 #define REFL_I	.5
 
@@ -130,14 +104,14 @@ vec3	camera(vec2 uv) {
     return ( normalize((uv.x-1.)*right + (uv.y-.5)*up + fov*forw) );
 }
 
-        void main() {
-          vec2 uv = vUv;
+void main() {
+    vec2 uv = vUv;
 //void mainImage( out vec4 fragColor, in vec2 fragCoord )
 //{
     st = sin(.5);//*iTime);
 //	vec2 uv = fragCoord.xy / iResolution.xy;
 //    uv.x *= iResolution.x / iResolution.y;
-    vec3 pos = vec3(.2, .0, -.85+.08*st)*rotX(.3);//*iTime);
+    vec3 pos = vec3(.2, .0, -1.85+.08*st)*rotX(.3);//*iTime);
     vec3 dir = camera(uv)*rotX(-.1+.3);//*iTime);
     vec3 col = vec3(.942, .732, .523);
     
@@ -165,48 +139,11 @@ vec3	camera(vec2 uv) {
     }
     else
         col = texture2D(texture, dir.xy).rgb;
-//        col = texture(_texture, dir).rgb;
-//    fragColor = vec4(col,1.0);
-//}*/
-          vec4 disp = texture2D(disp, uv);
-          vec2 distortedPosition = vec2(uv.x, uv.y + dispFactor * (disp.r*effectFactor));
-          vec2 distortedPosition2 = vec2(uv.x, uv.y - (1.0 - dispFactor) * (disp.r*effectFactor));
-          vec4 _texture = texture2D(texture, distortedPosition);
-          vec4 _texture2 = texture2D(texture2, distortedPosition2);
-          vec4 finalTexture = mix(_texture, _texture2, dispFactor);
-//        vec3 col = 0.5 + 0.5*(sin( length(2.*uv.xyx -.3335 ))*1.+vec3(0.5,0.5,0.5));
-          gl_FragColor = vec4(vec3(col),1.) + _texture;//finalTexture;
-        }`
-    })
-  }
 
-  get texture() {
-    return this.uniforms.texture.value
-  }
-  set texture(v) {
-    this.uniforms.texture.value = v
-  }
-  get texture2() {
-    return this.uniforms.texture2.value
-  }
-  set texture2(v) {
-    this.uniforms.texture2.value = v
-  }
-  get disp() {
-    return this.uniforms.disp.value
-  }
-  set disp(v) {
-    this.uniforms.disp.value = v
-  }
-  get dispFactor() {
-    return this.uniforms.dispFactor.value
-  }
-  set dispFactor(v) {
-    this.uniforms.dispFactor.value = v
-  }
+//    fragColor = vec4(col,1.0);
+    gl_FragColor = vec4(col,1.);// + texture2D(texture, dir.xy).rgb;
 }
 
-// register element in react-spring (a.fade)
-//apply({ Fade })
-// register element in r3f (<fade />)
-extend({ Shader })
+`;
+
+export default Voronoi;

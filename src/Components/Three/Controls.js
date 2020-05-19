@@ -1,8 +1,9 @@
 
 import React, { useRef } from "react";
 import { extend, useFrame, useThree } from "react-three-fiber";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { FirstPersonControls } from "three/examples/jsm/controls/FirstPersonControls";
 import { FlyControls } from "three/examples/jsm/controls/FlyControls";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 extend({ OrbitControls });
 
@@ -28,5 +29,18 @@ const FlyCam = props => {
   return <flyControls ref={ref} args={[camera, domElement]} {...props} />;
 };
 
+extend({ FirstPersonControls });
+
+const FPCam = props => {
+  const ref = useRef();
+  const {
+    camera,
+    gl: { domElement }
+  } = useThree();
+  console.log(ref);
+  useFrame(() => ref.current && ref.current.update());
+  return <firstPersonControls ref={ref} args={[camera, domElement]} {...props} />;
+};
+
 export default OrbitCam;
-export {FlyCam};
+export {FlyCam,FPCam};
