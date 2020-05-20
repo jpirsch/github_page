@@ -26,8 +26,8 @@ class HeaderTop extends React.Component {
           <a href="#0" title="Close Search" className="header__search-close">Close</a>
         </div>  */}{/* end header__search */}
         {/* toggles */}
-{/*        <a href="#0" className="header__search-trigger" />
-        <a href="#0" className="header__menu-toggle"><span>Menu</span></a> */}
+{/*        <a href="#0" className="header__search-trigger" />*/}
+        <a href="#0" className="header__menu-toggle"><span>Menu</span></a>
       </div>
     );
   }

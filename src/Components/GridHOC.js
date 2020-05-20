@@ -1,7 +1,7 @@
 
 import React from "react";
 
-const Row = (WrappedComponent) => {
+const RowHOC = (WrappedComponent) => {
   class HOC extends React.Component {
     render() {
       return (
@@ -14,9 +14,9 @@ const Row = (WrappedComponent) => {
   return HOC;
 };
 
-export default Row;
+export default RowHOC;
 
-export const RowHalf = (Comp1, Comp2) => {
+export const RowHalfHOC = (Comp1, Comp2) => {
   class HOC extends React.Component {
     render() {
       return (
@@ -30,7 +30,7 @@ export const RowHalf = (Comp1, Comp2) => {
   return HOC;
 };
 
-export const Column6 = (WrappedComponent) => {
+export const Column6HOC = (WrappedComponent) => {
   class HOC extends React.Component {
     render() {
       return (
@@ -43,7 +43,7 @@ export const Column6 = (WrappedComponent) => {
   return HOC;
 };
 
-export const ColumnFull = (WrappedComponent) => {
+export const ColumnFullHOC = (WrappedComponent) => {
   class HOC extends React.Component {
     render() {
       return (

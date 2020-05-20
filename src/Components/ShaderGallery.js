@@ -1,6 +1,6 @@
 
 import React from "react";
-import Row, {Column6, RowHalf} from "./GridHOC.js"
+//import Row, {Column6, RowHalf} from "./GridHOC.js"
 import "./ShaderGallery.css"
 import ThreeC from "./Three/ThreeCanvas.js"
 
@@ -19,8 +19,6 @@ function Item() {
 class ShaderGallery extends React.Component {
 
   render() {
-    const InCol = Column6(Item);
-    const In    = RowHalf(InCol, InCol);
     return (
       <div className="s-content content">
         <main className="row s-styles">

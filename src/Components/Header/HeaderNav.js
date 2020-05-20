@@ -12,7 +12,8 @@ class HeaderNav extends React.Component {
       {route:"/Web", name:"Web" }
     ];
     const posts = [
-      {route:"/ShaderGallery", name:"ShaderGallery" }
+      {route:"/ShaderGallery", name:"ShaderGallery" },
+      {route:"/Bullet", name:"Bullet" }
     ];
     return (
       <nav className="header__nav-wrap">

@@ -1,6 +1,6 @@
 
 import React from "react";
-import Row, {Column6, RowHalf} from "./GridHOC.js"
+import RowHOC, {Column6HOC, RowHalfHOC} from "./GridHOC.js"
 
 //class Page_item extends React.Component {
 //  render() {
@@ -17,8 +17,8 @@ function Item() {
 class Home extends React.Component {
 
   render() {
-    const InCol = Column6(Item);
-    const In    = RowHalf(InCol, InCol);
+    const InCol = Column6HOC(Item);
+    const In    = RowHalfHOC(InCol, InCol);
     return (
       <div className="s-content content">
         <main className="row s-styles">
