@@ -25,7 +25,7 @@ export class Shader extends THREE.ShaderMaterial {
     super({
       uniforms: {
         effectFactor: { type: 'f', value: 1.2 },
-        dispFactor: { type: 'f', value: 0 },
+        time: { type: 'f', value: 0 },
         texture: { type: 't', value: undefined },
         texture2: { type: 't', value: undefined },
         disp: { type: 't', value: undefined }
@@ -57,11 +57,11 @@ export class Shader extends THREE.ShaderMaterial {
   set disp(v) {
     this.uniforms.disp.value = v
   }
-  get dispFactor() {
-    return this.uniforms.dispFactor.value
+  get time() {
+    return this.uniforms.time.value
   }
-  set dispFactor(v) {
-    this.uniforms.dispFactor.value = v
+  set time(v) {
+    this.uniforms.time.value = v
   }
 }
 

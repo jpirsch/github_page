@@ -2,6 +2,7 @@
 const Voronoi = `
 
 varying vec2 vUv;
+uniform float time;
 uniform sampler2D texture;
 
 #define I_MAX	20 // Should be at least 50 but my computer is old...
@@ -47,8 +48,8 @@ vec3	voronoi(vec2 uv)
         {
             vec2 neighbor = vec2(float(x), float(y));
             vec2 pt = random2(i_uv + neighbor);
-            //pt = .5 + .5 * sin(iTime + 6.28*pt);
-            pt = .5 + .5 * sin(6.28*pt);
+            pt = .5 + .5 * sin(time + 6.28*pt);
+            //pt = .5 + .5 * sin(6.28*pt);
             vec2 diff = neighbor + pt - uv;
             float dist = length(diff);
             if (dist < mdist)
@@ -73,8 +74,8 @@ vec3	voronoi_sphere_map(vec3 p)
 
 float	map(vec3 p)
 {
-    //p *= rotX(.127*iTime) * rotY(.127*iTime);
-    p *= rotX(.127) * rotY(.127);
+    p *= rotX(.127*time) * rotY(.127*time);
+    //p *= rotX(.127) * rotY(.127);
     vec3 ret = voronoi_sphere_map(normalize(p));
 //    return length(p) - .5;
 	return length(p) - .5 - .05*ret.x;
@@ -108,19 +109,19 @@ void main() {
     vec2 uv = vUv;
 //void mainImage( out vec4 fragColor, in vec2 fragCoord )
 //{
-    st = sin(.5);//*iTime);
+    st = sin(.5*time);
 //	vec2 uv = fragCoord.xy / iResolution.xy;
 //    uv.x *= iResolution.x / iResolution.y;
-    vec3 pos = vec3(.2, .0, -1.85+.08*st)*rotX(.3);//*iTime);
-    vec3 dir = camera(uv)*rotX(-.1+.3);//*iTime);
+    vec3 pos = vec3(.2, .0, -1.85+.08*st)*rotX(.3*time);
+    vec3 dir = camera(uv)*rotX(-.1+.3*time);
     vec3 col = vec3(.942, .732, .523);
     
 	float d = march(pos, dir);
     if (d < FAR)
     {
 		vec3 p = pos + dir * d;
-        //col += voronoi_sphere_map(normalize(p*rotX(.127*iTime) * rotY(.127*iTime)));
-        col += voronoi_sphere_map(normalize(p*rotX(.127) * rotY(.127)));
+        col += voronoi_sphere_map(normalize(p*rotX(.127*time) * rotY(.127*time)));
+        //col += voronoi_sphere_map(normalize(p*rotX(.127) * rotY(.127)));
 #ifdef LIGHTS
         vec2 e = vec2(-1., 1.)*0.005;
         vec3 n = normalize(e.yxx*map(p + e.yxx) + e.xxy*map(p + e.xxy) + e.xyx*map(p + e.xyx) + e.yyy*map(p + e.yyy) );
@@ -138,7 +139,7 @@ void main() {
 #endif
     }
     else
-        col = texture2D(texture, dir.xy).rgb;
+        col = texture2D(texture, uv.xy).rgb;
 
 //    fragColor = vec4(col,1.0);
     gl_FragColor = vec4(col,1.);// + texture2D(texture, dir.xy).rgb;

@@ -1,5 +1,6 @@
 
 //import ReactDOM from 'react-dom'
+import "./Three/Three.css"
 import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from 'react-three-fiber'
 
@@ -36,8 +37,8 @@ function ThreeCanvas() {
         <Canvas>
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
-          <Box position={[-12., 0, 0]} />
-          <Box position={[12., 0, 0]} size={2} />
+          <Box position={[-2., 0, 0]} size={2}/>
+          <Box position={[2., 0, 0]} size={2} />
         </Canvas>
   );
 }
@@ -45,7 +46,17 @@ function ThreeCanvas() {
 class ThreeTest extends React.Component {
   render() {
     return (
-      <ThreeCanvas/>
+      <div className="s-content content">
+      <main className="row s-styles">
+        <section id="styles" className="column large-full">
+
+          <div className="backshadow">
+            <ThreeCanvas/>
+          </div>
+
+        </section>
+      </main>
+    </div>
     );
   }
 }

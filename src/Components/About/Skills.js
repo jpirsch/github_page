@@ -31,7 +31,7 @@ class Skills extends React.Component {
         <h3>Skill Bars</h3>
         <ul className="skill-bars">
           {skillList.map((t, i) =>
-            <SkillBar name={t.name} percent={t.percent} />
+            <SkillBar name={t.name} percent={t.percent} key={i} />
           )}
         </ul>
       </div>
