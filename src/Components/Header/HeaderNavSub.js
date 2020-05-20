@@ -8,7 +8,7 @@ class SubMenu extends React.Component {
     return (
       <>
         <li className="has-children">
-          <a href="#0" title="">{this.props.name}</a>
+          <a href={"/"+this.props.name} title="">{this.props.name}</a>
           <ul className="sub-menu">
         {this.props.list.map((t, i) =>
             <li key={i} >

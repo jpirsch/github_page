@@ -4,8 +4,7 @@ import React from 'react';
 //import Toolbar from './Toolbar';
 import Header from "./Components/Header.js"
 import Home from "./Components/Home.js"
-import Categories,
-{ Graphics, Physics, AI, UI } from "./Components/Categories.js"
+import { Graphics, Physics, AI, Web } from "./Components/Categories.js"
 import ShaderGallery from "./Components/ShaderGallery.js"
 import About from "./Components/About.js"
 import { HashRouter, Route } from "react-router-dom";
@@ -20,7 +19,7 @@ function App() {
           <Route path="/Graphics" component={Graphics} />
           <Route path="/Physics" component={Physics} />
           <Route path="/AI" component={AI} />
-          <Route path="/UI" component={UI} />
+          <Route path="/Web" component={Web} />
           <Route path="/ShaderGallery" component={ShaderGallery} />
           <Route path="/About" component={About} />
         </div>

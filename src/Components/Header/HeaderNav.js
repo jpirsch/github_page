@@ -9,7 +9,7 @@ class HeaderNav extends React.Component {
       {route:"/Graphics", name:"Graphics" },
       {route:"/Physics", name:"Physics" },
       {route:"/AI", name:"AI" },
-      {route:"/UI", name:"UI" }
+      {route:"/Web", name:"Web" }
     ];
     const posts = [
       {route:"/ShaderGallery", name:"ShaderGallery" }
@@ -25,7 +25,7 @@ class HeaderNav extends React.Component {
 
         <ul className="header__social">
           <li className="ss-instagram">
-            <a href="">
+            <a href="https://www.instagram.com/svaen42/">
               <span className="screen-reader-text">Instagram</span>
             </a>
           </li>
