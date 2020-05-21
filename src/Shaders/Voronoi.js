@@ -8,7 +8,7 @@ uniform sampler2D texture;
 #define I_MAX	20 // Should be at least 50 but my computer is old...
 #define FAR		5.
 #define E		.02 // Could also be switched to 0.002
-#define SCALE	6.
+#define SCALE	4.
 #define LIGHTS
 #define REFL_I	.5
 
@@ -106,13 +106,10 @@ vec3	camera(vec2 uv) {
 }
 
 void main() {
-    vec2 uv = vUv;
-//void mainImage( out vec4 fragColor, in vec2 fragCoord )
-//{
     st = sin(.5*time);
-//	vec2 uv = fragCoord.xy / iResolution.xy;
+    vec2 uv = vUv;
 //    uv.x *= iResolution.x / iResolution.y;
-    vec3 pos = vec3(.2, .0, -1.85+.08*st)*rotX(.3*time);
+    vec3 pos = vec3(.2, .0, -1.25+.08*st)*rotX(.3*time);
     vec3 dir = camera(uv)*rotX(-.1+.3*time);
     vec3 col = vec3(.942, .732, .523);
     
@@ -134,15 +131,15 @@ void main() {
         vec3 vl = normalize( light_pos - p );
 		float diffuse  = max( 0.001, dot( vl, n ) );
 		float specular = pow( max( 0.001, dot( vl, ref_ev ) ), 1. );
-        float	brdf = (diffuse + specular) * .5 + .5;
+        float	brdf = (diffuse + specular) * 1.00 + .00;
         col *=  brdf;
 #endif
     }
     else
         col = texture2D(texture, uv.xy).rgb;
 
-//    fragColor = vec4(col,1.0);
-    gl_FragColor = vec4(col,1.);// + texture2D(texture, dir.xy).rgb;
+    vec3 gamma = pow( col, vec3(2.25) ); // + texture2D(texture, dir.xy).rgb;
+    gl_FragColor = vec4( gamma, 1. );
 }
 
 `;
