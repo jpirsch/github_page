@@ -1,13 +1,12 @@
+
 import React from 'react';
-//import logo from './logo.svg';
-//import './App.css';
-//import Toolbar from './Toolbar';
-import Header from "./Components/Header.js"
-import Home from "./Components/Home.js"
-import { Graphics, Physics, AI, Web } from "./Components/Categories.js"
-import ShaderGallery from "./Components/ShaderGallery.js"
-import Post, { Bullet } from "./Components/Posts.js"
-import About from "./Components/About.js"
+import Header from "./Components/Header.js";
+import Home from "./Components/Home.js";
+import { Graphics, Physics, AI, Web } from "./Components/Categories.js";
+import ShaderGallery from "./Components/ShaderGallery.js";
+import ThreePost, {ThreePost2} from "./Components/ThreePost.js";
+import Post, { Bullet } from "./Components/Posts.js";
+import About from "./Components/About.js";
 import { HashRouter, Route } from "react-router-dom";
 
 function App() {
@@ -22,6 +21,7 @@ function App() {
           <Route path="/AI" component={AI} />
           <Route path="/Web" component={Web} />
           <Route path="/ShaderGallery" component={ShaderGallery} />
+          <Route path="/ThreePost" component={ThreePost2} />
           <Route path="/Bullet" component={Bullet} />
           <Route path="/About" component={About} />
         </div>

@@ -1,10 +1,8 @@
+
 import React from "react";
 
-var NewComponent = React.createClass({
-
-  render: function() {
-
-    return (
+function Preloader() {
+  return (
       <div id="preloader">
         <div id="loader" className="dots-fade">
           <div />
@@ -12,6 +10,8 @@ var NewComponent = React.createClass({
           <div />
         </div>
       </div>
-    );
-  }
-});
+  );
+}
+
+export default Preloader;
+

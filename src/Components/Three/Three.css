@@ -6,7 +6,7 @@
 
 canvas,
 .canvas > div {
-  height: 100vh;
+  height: 75vh;
   z-index: 1;
 }
 

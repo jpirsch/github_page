@@ -3,6 +3,7 @@ import React from "react";
 //import Row, {Column6, RowHalf} from "./GridHOC.js"
 import "./ShaderGallery.css"
 import ThreeC from "./Three/ThreeCanvas.js"
+import Scene from "./Three/Scene.js"
 
 //class Page_item extends React.Component {
 //  render() {
@@ -25,7 +26,9 @@ class ShaderGallery extends React.Component {
           <section id="Graphics" className="column large-full">
 
             <div className="backshadow">
-              <ThreeC/>
+              <ThreeC>
+                <Scene />
+              </ThreeC>
             </div>
 
           </section>

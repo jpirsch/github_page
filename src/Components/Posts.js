@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Img from "../Images/img1.jpg";
 
 export class Bullet extends React.Component {
   render() {
@@ -20,7 +21,7 @@ class BasePost extends React.Component {
             <article class="column large-full entry format-standard">
               <div class="media-wrap entry__media">
                 <div class="entry__post-thumb">
-                  <img src="images/thumbs/single/standard/standard-1000.jpg" />
+                  <img src={Img} alt=""></img>
                 </div>
               </div>
       
@@ -59,7 +60,7 @@ class BasePost extends React.Component {
                 </p>
       
                   <p>
-                  <img src="images/wheel-1000.jpg" />
+                  <img src={Img} alt=""></img>
                   </p>
       
                   <h2>Large Heading</h2>
@@ -155,6 +156,48 @@ class BasePost extends React.Component {
       
                   </p>
               </div> 
+              <div class="entry__pagenav">
+                  <div class="entry__nav">
+                      <div class="entry__prev">
+                          <a href="#0" rel="prev">
+                              <span>Previous Post</span>
+                              Tips on Minimalist Design 
+                          </a>
+                      </div>
+                      <div class="entry__next">
+                          <a href="#0" rel="next">
+                              <span>Next Post</span>
+                              Less Is More 
+                          </a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="entry__related">
+                  <h3 class="h2">Related Articles</h3>
+
+                  <ul class="related">
+                      <li class="related__item">
+                          <a href="single-standard.html" class="related__link">
+                  <img src={Img} alt=""></img>
+                          </a>
+                          <h5 class="related__post-title">Using Repetition and Patterns in Photography.</h5>
+                      </li>
+                      <li class="related__item">
+                          <a href="single-standard.html" class="related__link">
+                  <img src={Img} alt=""></img>
+                          </a>
+                          <h5 class="related__post-title">Health Benefits Of Morning Dew.</h5>
+                      </li>
+                      <li class="related__item">
+                          <a href="single-standard.html" class="related__link">
+                  <img src={Img} alt=""></img>
+                          </a>
+                          <h5 class="related__post-title">The Art Of Visual Storytelling.</h5>
+                      </li>
+                  </ul>
+              </div>
+
             </article>
           </main>
         </div>

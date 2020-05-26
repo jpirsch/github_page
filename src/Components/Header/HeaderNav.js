@@ -13,6 +13,7 @@ class HeaderNav extends React.Component {
     ];
     const posts = [
       {route:"/ShaderGallery", name:"ShaderGallery" },
+      {route:"/ThreePost", name:"Three Post" },
       {route:"/Bullet", name:"Bullet" }
     ];
     return (

@@ -1,16 +1,12 @@
 
-import React, {useRef, UseMemo} from "react";
+import React, { useRef, UseMemo } from "react";
 import { useLoader, useFrame, useUpdate } from "react-three-fiber";
-import {DoubleSide, TextureLoader} from "three";
-//import { noise } from "./perlin";
+import { DoubleSide, TextureLoader } from "three";
 import MyShader from "./Shader.js";
 
 const Terrain = (props) => {
-//  const group = useRef();
   const texture1 = useLoader(TextureLoader, [props.url]);
-  //const texture = UseMemo(() => new TextureLoader().load(props.url), [props.url]);
   const time = useRef(0);
-  console.log(time);
 
     const mesh = useUpdate(({ geometry }) => {
   //   noise.seed(Math.random());
@@ -30,31 +26,17 @@ const Terrain = (props) => {
     let time_uni = 0.;
     useFrame((state,delta) => {
 //      time_uni = time.current + delta;
-      time.current.uniforms.time.value += delta;
+//      time.current.uniforms.time.value += delta;
       //mesh.current.rotation.z += 0.001;
     });
 
   return (
     <mesh ref={mesh} position={props.position} rotation={props.rotation} >
       <planeBufferGeometry attach="geometry" args={[props.size, props.size, 5, 5]} />
-      <shader ref={time} attach="material" map={texture1[0]} side={DoubleSide}
-              fragmentShader={props.frag}
-              uniforms={{texture:{type:'t', value: texture1[0]},
-                          time:{type:'f', value: time_uni}}} />
+      <meshStandardMaterial attach="material" color={'orange'} side={DoubleSide} />
     </mesh>
   );
 };
-
-//<shader attach="material" map={texture1[0]} side={DoubleSide}
-//fragmentShader={props.frag} />
-//      <shader attach="material" texture={texture1} val={1} />
-/*      <meshPhongMaterial
-        attach="material"
-        
-        specular={"hotpink"}
-        shininess={3}
-        flatShading
-      />*/
 
 export default Terrain;
 

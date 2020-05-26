@@ -18,9 +18,7 @@ class AboutStyles extends React.Component {
       </div>
 
       <div class="content__page-header">
-          <h1 class="display-1">
-          Hello, We Are TypeRite.
-          </h1>
+          <h1 class="display-1">Hello, We Are TypeRite.</h1>
       </div> 
 
       <p class="lead drop-cap">
